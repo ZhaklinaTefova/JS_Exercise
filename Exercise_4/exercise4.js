@@ -10,18 +10,38 @@ Input2: 80
 Output: 80 is closer to 100
  */
 
+// function findTheClosestNumberTo100(input1, input2) {
+//   input1 = parseInt(prompt("Insert the first number!"));
+//   input2 = parseInt(prompt("Insert the second number!"));
+//   if (input1 <= 0 || input1 >= 100 || input2 <= 0 || input2 >= 100) {
+//     alert("One of your numbers is invalid!");
+//   } else {
+//     let result1 = 100 - input1;
+//     let result2 = 100 - input2;
+//     if (result1 > result2) {
+//       alert("Second number is closer to 100");
+//     } else {
+//       alert("First numer is closer to 100");
+//     }
+//   }
+// }
+// findTheClosestNumberTo100();
+
+
 function findTheClosestNumberTo100(input1, input2) {
   input1 = parseInt(prompt("Insert the first number!"));
   input2 = parseInt(prompt("Insert the second number!"));
-  if (input1 <= 0 || input1 >= 100 || input2 <= 0 || input2 >= 100) {
+  if (input1 <= 0 || input2 <= 0) {
     alert("One of your numbers is invalid!");
   } else {
-    let result1 = 100 - input1;
-    let result2 = 100 - input2;
+    let result1 = Math.abs(100 - input1);
+    let result2 = Math.abs(100 - input2);
     if (result1 > result2) {
       alert("Second number is closer to 100");
-    } else {
+    } else if (result1 < result2) {
       alert("First numer is closer to 100");
+    } else {
+      alert("Both numbers have the same distance from the number 100")
     }
   }
 }
